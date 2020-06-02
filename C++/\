@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <vector>
+int main(){
+
+    std::string s ="11111000";
+    int temp, value=0; 
+    std::vector<int32_t> vec;
+    while(s.size() >= 4){
+        int i = 0;
+        for(i = 0; i< 3; i++) {
+            temp = s.at(i) - '0';
+            std::cout << temp << std::endl;
+            value +=temp;
+            value <<=1;
+        }
+        std::cout <<" i = : " << i <<std::endl;
+        value += temp = s.at(i) -'0';
+        vec.push_back(value);
+        s = s.substr(4, s.size()-4);
+    }
+/*
+    while(s.size() >= 4){
+        for(int i = 0; i< 4; i++) {
+            temp = s.at(i) - '0';
+            std::cout << temp << std::endl;
+            value +=temp;
+            value <<=1;
+        }
+        value>>=1;
+        vec.push_back(value);
+        s = s.substr(4, s.size()-4);
+        value = 0;
+    }
+//    value>>=1;
+*/
+    std::cout << "value : " << value << std::endl;
+
+    for(auto a : vec){
+        std::cout <<"vec : " <<a << std::endl;
+        }
+
+}
